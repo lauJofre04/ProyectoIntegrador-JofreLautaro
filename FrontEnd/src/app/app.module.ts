@@ -13,6 +13,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HysComponent } from './components/hys/hys.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HysComponent,
     ProyectosComponent,
     FooterComponent,
+    HomeComponent,
+    LoginComponent,
     
   ],
   imports: [
