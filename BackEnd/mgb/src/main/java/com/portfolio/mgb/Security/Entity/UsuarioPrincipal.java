@@ -17,10 +17,10 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 public class UsuarioPrincipal implements UserDetails {
 
-    private String nombre;
-    private String nombreUsuario;
-    private String email;
-    private String password;
+    private final String nombre;
+    private final String nombreUsuario;
+    private final String email;
+    private final String password;
     private final Collection<? extends GrantedAuthority> authorities;
 
     //Constructor
@@ -34,8 +34,8 @@ public class UsuarioPrincipal implements UserDetails {
 
     public static UsuarioPrincipal build(Usuario usuario) {
         List<GrantedAuthority> authorities = usuario.getRoles().stream()
-                .map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name()))
-                .collect(Collectors.toList());
+                .map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors
+                .toList());
         return new UsuarioPrincipal(usuario.getNombre(), usuario.getNombreUsuario(), usuario.getEmail(), usuario.getPassword(), authorities);
     }
 
