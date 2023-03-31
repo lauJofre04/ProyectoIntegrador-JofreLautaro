@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/service/persona.service';
 
@@ -7,7 +7,7 @@ import { PersonaService } from 'src/app/service/persona.service';
   templateUrl: './acerca-de.component.html',
   styleUrls: ['./acerca-de.component.css']
 })
-export class AcercaDeComponent {
+export class AcercaDeComponent implements OnInit {
 
   persona: persona= new persona('','','');
 
