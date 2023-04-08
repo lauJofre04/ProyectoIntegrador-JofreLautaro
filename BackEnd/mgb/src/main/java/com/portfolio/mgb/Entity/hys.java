@@ -9,29 +9,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-/**
- *
- * @author User
- */
+
 @Entity
-public class Experiencia {
+public class hys {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nombreE;
-    private String descripcionE;
-    
-    //Constructores
+    private String nombre;
+    private int porcentaje;
 
-    public Experiencia() {
+    public hys() {
     }
 
-    public Experiencia(String nombreE, String descripcionE) {
-        this.nombreE = nombreE;
-        this.descripcionE = descripcionE;
+    public hys(String nombre, int porcentaje) {
+        this.nombre = nombre;
+        this.porcentaje = porcentaje;
     }
-    
-    //Getters and setters
 
     public int getId() {
         return id;
@@ -41,20 +34,23 @@ public class Experiencia {
         this.id = id;
     }
 
-    public String getNombreE() {
-        return nombreE;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreE(String nombreE) {
-        this.nombreE = nombreE;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDescripcionE() {
-        return descripcionE;
+    public int getPorcentaje() {
+        return porcentaje;
     }
 
-    public void setDescripcionE(String descripcionE) {
-        this.descripcionE = descripcionE;
+    public void setPorcentaje(int porcentaje) {
+        this.porcentaje = porcentaje;
     }
+
+    
+    
     
 }

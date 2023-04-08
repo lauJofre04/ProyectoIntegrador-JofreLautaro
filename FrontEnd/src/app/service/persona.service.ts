@@ -4,12 +4,10 @@ import { Observable } from 'rxjs';
 import { persona } from '../model/persona.model';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 export class PersonaService {
-  URL = environment.URL + 'personas/';
+  URL = environment.URL + 'persona/';
 
   constructor(private http: HttpClient) { }
 

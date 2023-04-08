@@ -20,33 +20,33 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class SExperiencia {
     @Autowired
-    RExperiencia rExperiencia;
-    
-    public List<Experiencia> list(){
-        return rExperiencia.findAll();
-    }
-    
-    public Experiencia getOne(int id){
-        Experiencia expe = rExperiencia.findById(id).orElse(null);
-        return expe;
-    }
-       
-    
-    public void save(Experiencia expe){
-        rExperiencia.save(expe);
-    }
-    
+     RExperiencia rExperiencia;
+     
+     public List<Experiencia> list(){
+         return rExperiencia.findAll();
+     }
+     
+     public Optional<Experiencia> getOne(int id){
+         return rExperiencia.findById(id);
+     }
+     
+     public Optional<Experiencia> getByNombreE(String nombreE){
+         return rExperiencia.findByNombreE(nombreE);
+     }
+     
+     public void save(Experiencia expe){
+         rExperiencia.save(expe);
+     }
+     
      public void delete(int id){
-        rExperiencia.deleteById(id);
-    }
-    
-    public void edit(Experiencia expe){
-        rExperiencia.save(expe);
-    }
-    
-    //busca lista de relojes por la id de la persona
-    public List<Experiencia> findByPersonaId(Long personaId) {
-        return rExperiencia.findByPersonaId(personaId);
-    }
-
+         rExperiencia.deleteById(id);
+     }
+     
+     public boolean existsById(int id){
+         return rExperiencia.existsById(id);
+     }
+     
+     public boolean existsByNombreE(String nombreE){
+         return rExperiencia.existsByNombreE(nombreE);
+     }
 }

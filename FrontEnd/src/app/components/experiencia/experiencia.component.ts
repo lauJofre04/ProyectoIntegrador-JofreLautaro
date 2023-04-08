@@ -12,7 +12,7 @@ export class ExperienciaComponent {
   exp: Experiencia[]=[];
   constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
 
-  isLogged = false;
+  isLogged:boolean = false;
 
   ngOnInit(): void {
     this.cargarExperiencia();
@@ -27,15 +27,14 @@ export class ExperienciaComponent {
     this.sExperiencia.lista().subscribe(data => { this.exp = data; })
   }
 
-  delete(id?: number){
+  delete(id?:number){
     if(id != undefined){
       this.sExperiencia.delete(id).subscribe(
-        data => {
+        data =>{
+          alert("Experiencia eliminada correctamente")
           this.cargarExperiencia();
-        }, err => {
-          alert("No se pudo borrar la experiencia");
-        }
-      )
-    }
-  }
+        }, err =>{
+          alert("no se pudo eliminar la experiencia")
+        })
+    }}
 }
